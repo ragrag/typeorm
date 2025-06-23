@@ -342,7 +342,7 @@ export class PostgresQueryRunner
 
         const databaseConnection = await this.connect()
         this.driver.connection.logger.logQuery(query, parameters, this)
-        const stream = databaseConnection.query(
+        const stream = await databaseConnection.query(
             new QueryStream(query, parameters),
         )
         if (onEnd) stream.on("end", onEnd)
