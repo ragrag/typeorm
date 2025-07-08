@@ -15,7 +15,6 @@ describe("entity-metadata-builder > build", () => {
         async () =>
             (dataSources = await createTestingConnections({
                 entities: [__dirname + "/entity/junction-table/*{.js,.ts}"],
-                enabledDrivers: ["sqlite"],
             })),
     )
 
